@@ -1,0 +1,10 @@
+.title {
+    font-size: 90px;
+    font-weight: 700;
+    height: 160px;
+    /* background-color: rgb(209, 206, 37); */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
