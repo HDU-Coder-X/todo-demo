@@ -1,0 +1,10 @@
+.none {
+    font-size: 30px;
+    font-weight: 700;
+    height: 106px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    color: #757575;
+}

@@ -14,3 +14,7 @@ ol,
 li {
     list-style: none;
 }
+
+body {
+    background-color: rgb(31, 31, 31);
+}
