@@ -29,8 +29,8 @@ const App: React.FC = () => {
     }, []);
     // 根据是否已完成，分类
     useEffect((): void => {
-        const newDoing: TaskObj[] = task.filter(obj => !obj.isDone);
-        const newDone: TaskObj[] = task.filter(obj => obj.isDone);
+        const newDoing: TaskObj[] = task.filter((obj: TaskObj) => !obj.isDone);
+        const newDone: TaskObj[] = task.filter((obj: TaskObj) => obj.isDone);
         setDoing(newDoing);
         setDone(newDone);
     }, [task]);

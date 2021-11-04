@@ -9,15 +9,15 @@ interface InputProps {
 }
 
 const Input: React.FC<InputProps> = ({ setTask }) => {
-    const [input, setInput] = useState('');
+    const [input, setInput] = useState<string>('');
     const addTask = (e: KeyboardEvent) => {
         if (e.code !== 'Enter') return;
-        const content = input.trim();
+        const content: string = input.trim();
         if (!content) {
             setInput('');
             return;
         }
-        const allOldTaks = getLocalTasks();
+        const allOldTaks: TaskObj[] = getLocalTasks();
         const newTask: TaskObj = { id: nanoid(), content, isDone: false };
         allOldTaks.push(newTask);
         setLocalTasks(allOldTaks);

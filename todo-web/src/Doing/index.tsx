@@ -13,14 +13,14 @@ interface DoingProps {
 const Doing: React.FC<DoingProps> = ({ doing, setTask }) => {
     // 删除任务
     const deleteTask = (id: string) => {
-        const allOldTaks = getLocalTasks();
-        const newTasks = allOldTaks.filter((obj: TaskObj) => obj.id !== id);
+        const allOldTaks: TaskObj[] = getLocalTasks();
+        const newTasks: TaskObj[] = allOldTaks.filter((obj: TaskObj) => obj.id !== id);
         setLocalTasks(newTasks);
         setTask(getLocalTasks());
     };
     // 完成任务
     const finishTask = (id: string) => {
-        const allOldTaks = getLocalTasks();
+        const allOldTaks: TaskObj[] = getLocalTasks();
         for (const obj of allOldTaks) {
             if (obj.id === id) {
                 obj.isDone = !obj.isDone;
@@ -32,19 +32,19 @@ const Doing: React.FC<DoingProps> = ({ doing, setTask }) => {
     };
     // 失去焦点，恢复原任务
     const recoverTask = (id: string, oldContent: string) => {
-        const inputNode = document.getElementById(`${id}`) as HTMLInputElement;
+        const inputNode: HTMLInputElement = document.getElementById(`${id}`) as HTMLInputElement;
         inputNode.value = oldContent;
     };
     // 更新任务
     const updateTask = (e: KeyboardEvent, id: string, oldContent: string) => {
         if (e.code !== 'Enter') return;
-        const inputNode = document.getElementById(`${id}`) as HTMLInputElement;
-        const newContent = inputNode.value.trim();
+        const inputNode: HTMLInputElement = document.getElementById(`${id}`) as HTMLInputElement;
+        const newContent: string = inputNode.value.trim();
         if (newContent === oldContent) {
             inputNode.blur();
             return;
         }
-        const allOldTaks = getLocalTasks();
+        const allOldTaks: TaskObj[] = getLocalTasks();
         for (const obj of allOldTaks) {
             if (obj.id === id) {
                 obj.content = newContent;

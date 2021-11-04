@@ -11,14 +11,14 @@ interface DoneProps {
 
 const Done: React.FC<DoneProps> = ({ done, setTask }) => {
     const deleteTask = (id: string) => {
-        const allOldTaks = getLocalTasks();
-        const newTasks = allOldTaks.filter((obj: TaskObj) => obj.id !== id);
+        const allOldTaks: TaskObj[] = getLocalTasks();
+        const newTasks: TaskObj[] = allOldTaks.filter((obj: TaskObj) => obj.id !== id);
         setLocalTasks(newTasks);
         setTask(getLocalTasks());
     };
 
     const reDoTask = (id: string) => {
-        const allOldTaks = getLocalTasks();
+        const allOldTaks: TaskObj[] = getLocalTasks();
         for (const obj of allOldTaks) {
             if (obj.id === id) {
                 obj.isDone = !obj.isDone;
