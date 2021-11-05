@@ -1,4 +1,4 @@
-<a href="https://ts-todo-0gl1ck0w116a2558-1304393382.tcloudbaseapp.com/" target="_blank">「点击此处预览」</a>
+<a href="http://118.31.63.112:81/" target="_blank">「点击此处预览」</a>
 
 # 1. 接口文档
 
@@ -73,9 +73,31 @@
 
 ## 4. 删除任务
 
+### 1. 根据ID删除任务
+
 请求方法：`DELETE`
 
 请求地址：`http://xxxxxxx:88/delete/[id]`，`[id]`为要删除任务的真实`id`
+
+返回：
+
+```javascript
+// 成功
+{
+    success: 0,
+}
+
+// 失败
+{
+    success: -1
+}
+```
+
+### 2. 删除所有已完成的任务
+
+请求方法：`DELETE`
+
+请求地址：`http://xxxxxxx:88/delete/all`
 
 返回：
 
