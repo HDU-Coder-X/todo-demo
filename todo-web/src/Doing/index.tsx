@@ -56,7 +56,9 @@ const Doing: React.FC<DoingProps> = ({ doing, setTask }) => {
     };
     return (
         <div className="doing-center">
-            <div className="doing-title">Doing</div>
+            <div className="title-box">
+                <div className="doing-title">Doing</div>
+            </div>
             {!doing.length ? (
                 <None />
             ) : (

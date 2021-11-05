@@ -2,8 +2,13 @@
     width: 90%;
     margin: auto;
 }
-
+.title-box {
+    height: 60px;
+    margin-bottom: 6px;
+    position: relative;
+}
 .doing-title {
+    box-sizing: border-box;
     font-size: 36px;
     font-weight: 700;
     height: 60px;
@@ -12,7 +17,6 @@
     justify-content: flex-start;
     align-items: center;
     border-bottom: 6px solid rgb(208, 208, 208);
-    margin-bottom: 6px;
     user-select: none;
     color: rgb(208, 208, 208);
 }

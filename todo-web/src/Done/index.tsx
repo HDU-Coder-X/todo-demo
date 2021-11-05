@@ -1,7 +1,8 @@
-import { VscChromeClose } from 'react-icons/vsc';
+import { VscChromeClose, VscTrash } from 'react-icons/vsc';
 import { TaskObj } from '../utils/interface';
 import { setLocalTasks, getLocalTasks } from '../utils/functon';
 import { GrRotateLeft } from 'react-icons/gr';
+import './index.css';
 import None from '../None';
 
 interface DoneProps {
@@ -28,9 +29,22 @@ const Done: React.FC<DoneProps> = ({ done, setTask }) => {
         setLocalTasks(allOldTaks);
         setTask(getLocalTasks());
     };
+    const deleteAllTask = () => {
+        const allOldTaks: TaskObj[] = getLocalTasks();
+        const newTasks: TaskObj[] = allOldTaks.filter((obj: TaskObj) => !obj.isDone);
+        setLocalTasks(newTasks);
+        setTask(getLocalTasks());
+    };
     return (
         <div className="doing-center">
-            <div className="doing-title">Done</div>
+            <div className="title-box">
+                <div className="doing-title done-title">Done</div>
+                {done.length ? (
+                    <div className="deleteAll" onClick={deleteAllTask}>
+                        <VscTrash />
+                    </div>
+                ) : null}
+            </div>
             {!done.length ? (
                 <None />
             ) : (
